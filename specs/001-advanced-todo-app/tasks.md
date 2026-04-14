@@ -11,11 +11,11 @@
 
 **Purpose**: Project initialization and baseline tooling/configuration.
 
-- [ ] T001 Initialize application entry and shell composition in `src/main.jsx` and `src/app/AppShell.jsx`
-- [ ] T002 Configure React, Zustand, Framer Motion, and test dependencies/scripts in `package.json`
-- [ ] T003 [P] Configure Vitest + RTL test runtime in `vitest.config.js` and `tests/setupTests.js`
-- [ ] T004 [P] Establish design token and global style scaffolding in `src/styles/tokens.css` and `src/styles/globals.css`
-- [ ] T005 [P] Document feature-branch workflow conventions in `docs/process/feature-branch-workflow.md`
+- [x] T001 Initialize application entry and shell composition in `src/main.jsx` and `src/app/AppShell.jsx`
+- [x] T002 Configure React, Zustand, Framer Motion, and test dependencies/scripts in `package.json`
+- [x] T003 [P] Configure Vitest + RTL test runtime in `vitest.config.js` and `tests/setupTests.js`
+- [x] T004 [P] Establish design token and global style scaffolding in `src/styles/tokens.css` and `src/styles/globals.css`
+- [x] T005 [P] Document feature-branch workflow conventions in `docs/process/feature-branch-workflow.md`
 
 ---
 
@@ -25,13 +25,13 @@
 
 **⚠️ CRITICAL**: No user story work starts until this phase is complete.
 
-- [ ] T006 Create task entity model + validation helpers in `src/models/taskModel.js`
-- [ ] T007 Implement versioned local persistence adapter in `src/persistence/localTaskStorage.js`
-- [ ] T008 [P] Define reusable task query selectors in `src/state/taskSelectors.js`
-- [ ] T009 [P] Implement task mutation action functions in `src/state/taskActions.js`
-- [ ] T010 Compose Zustand store with hydration/persist integration in `src/state/taskStore.js`
-- [ ] T011 Wire thin orchestration shell to store selectors/actions in `src/app/AppShell.jsx`
-- [ ] T012 Create shared task test fixtures for state/component tests in `tests/unit/state/taskFixtures.js`
+- [x] T006 Create task entity model + validation helpers in `src/models/taskModel.js`
+- [x] T007 Implement versioned local persistence adapter in `src/persistence/localTaskStorage.js`
+- [x] T008 [P] Define reusable task query selectors in `src/state/taskSelectors.js`
+- [x] T009 [P] Implement task mutation action functions in `src/state/taskActions.js`
+- [x] T010 Compose Zustand store with hydration/persist integration in `src/state/taskStore.js`
+- [x] T011 Wire thin orchestration shell to store selectors/actions in `src/app/AppShell.jsx`
+- [x] T012 Create shared task test fixtures for state/component tests in `tests/unit/state/taskFixtures.js`
 
 **Checkpoint**: Foundation complete — user stories can now be implemented.
 
@@ -45,21 +45,21 @@
 
 ### Tests for User Story 1
 
-- [ ] T013 [P] [US1] Add store contract tests for action/selector behavior in `tests/contract/state-store-contract.test.js`
-- [ ] T014 [P] [US1] Add AddTaskForm submission/validation tests in `src/components/AddTaskForm/AddTaskForm.test.jsx`
-- [ ] T015 [P] [US1] Add TaskItem lifecycle interaction tests in `src/components/TaskItem/TaskItem.test.jsx`
-- [ ] T016 [P] [US1] Add end-to-end lifecycle integration test in `tests/integration/task-lifecycle.test.jsx`
+- [x] T013 [P] [US1] Add store contract tests for action/selector behavior in `tests/contract/state-store-contract.test.js`
+- [x] T014 [P] [US1] Add AddTaskForm submission/validation tests in `src/components/AddTaskForm/AddTaskForm.test.jsx`
+- [x] T015 [P] [US1] Add TaskItem lifecycle interaction tests in `src/components/TaskItem/TaskItem.test.jsx`
+- [x] T016 [P] [US1] Add end-to-end lifecycle integration test in `tests/integration/task-lifecycle.test.jsx`
 
 ### Implementation for User Story 1
 
-- [ ] T017 [P] [US1] Implement task creation form UI and intent callbacks in `src/components/AddTaskForm/AddTaskForm.jsx`
-- [ ] T018 [P] [US1] Implement task item UI (display/edit/toggle/delete intents) in `src/components/TaskItem/TaskItem.jsx`
-- [ ] T019 [P] [US1] Implement task list rendering and item event wiring in `src/components/TaskList/TaskList.jsx`
-- [ ] T020 [P] [US1] Implement all/completed/incomplete filter controls in `src/components/TaskFilters/TaskFilters.jsx`
-- [ ] T021 [P] [US1] Implement trash panel UI for restore/permanent delete in `src/components/TrashPanel/TrashPanel.jsx`
-- [ ] T022 [US1] Integrate lifecycle actions and panel/filter state in `src/app/AppShell.jsx`
-- [ ] T023 [US1] Persist every mutating store action through adapter in `src/state/taskStore.js` and `src/persistence/localTaskStorage.js`
-- [ ] T024 [US1] Enforce edge-case handling (empty title, unknown task id, long title guard) in `src/state/taskActions.js` and `src/models/taskModel.js`
+- [x] T017 [P] [US1] Implement task creation form UI and intent callbacks in `src/components/AddTaskForm/AddTaskForm.jsx`
+- [x] T018 [P] [US1] Implement task item UI (display/edit/toggle/delete intents) in `src/components/TaskItem/TaskItem.jsx`
+- [x] T019 [P] [US1] Implement task list rendering and item event wiring in `src/components/TaskList/TaskList.jsx`
+- [x] T020 [P] [US1] Implement all/completed/incomplete filter controls in `src/components/TaskFilters/TaskFilters.jsx`
+- [x] T021 [P] [US1] Implement trash panel UI for restore/permanent delete in `src/components/TrashPanel/TrashPanel.jsx`
+- [x] T022 [US1] Integrate lifecycle actions and panel/filter state in `src/app/AppShell.jsx`
+- [x] T023 [US1] Persist every mutating store action through adapter in `src/state/taskStore.js` and `src/persistence/localTaskStorage.js`
+- [x] T024 [US1] Enforce edge-case handling (empty title, unknown task id, long title guard) in `src/state/taskActions.js` and `src/models/taskModel.js`
 
 **Checkpoint**: User Story 1 is independently functional and testable (MVP).
 
@@ -73,16 +73,16 @@
 
 ### Tests for User Story 2
 
-- [ ] T025 [P] [US2] Add component-boundary contract tests for callback-only interaction in `tests/contract/component-contracts.test.jsx`
-- [ ] T026 [P] [US2] Add motion behavior integration tests for add/update/delete/toggle transitions in `tests/integration/task-motion.test.jsx`
+- [x] T025 [P] [US2] Add component-boundary contract tests for callback-only interaction in `tests/contract/component-contracts.test.jsx`
+- [x] T026 [P] [US2] Add motion behavior integration tests for add/update/delete/toggle transitions in `tests/integration/task-motion.test.jsx`
 
 ### Implementation for User Story 2
 
-- [ ] T027 [P] [US2] Define task-item enter/exit/state motion variants in `src/animations/taskItemMotion.js`
-- [ ] T028 [P] [US2] Define list-stagger and layout motion variants in `src/animations/taskListMotion.js` and `src/animations/layoutMotion.js`
-- [ ] T029 [US2] Apply centralized motion variants to task list and items in `src/components/TaskList/TaskList.jsx` and `src/components/TaskItem/TaskItem.jsx`
-- [ ] T030 [US2] Implement high-contrast visual tokens and status cues in `src/styles/tokens.css` and `src/styles/globals.css`
-- [ ] T031 [US2] Align visual consistency across forms/filters/trash UI in `src/components/AddTaskForm/AddTaskForm.jsx`, `src/components/TaskFilters/TaskFilters.jsx`, and `src/components/TrashPanel/TrashPanel.jsx`
+- [x] T027 [P] [US2] Define task-item enter/exit/state motion variants in `src/animations/taskItemMotion.js`
+- [x] T028 [P] [US2] Define list-stagger and layout motion variants in `src/animations/taskListMotion.js` and `src/animations/layoutMotion.js`
+- [x] T029 [US2] Apply centralized motion variants to task list and items in `src/components/TaskList/TaskList.jsx` and `src/components/TaskItem/TaskItem.jsx`
+- [x] T030 [US2] Implement high-contrast visual tokens and status cues in `src/styles/tokens.css` and `src/styles/globals.css`
+- [x] T031 [US2] Align visual consistency across forms/filters/trash UI in `src/components/AddTaskForm/AddTaskForm.jsx`, `src/components/TaskFilters/TaskFilters.jsx`, and `src/components/TrashPanel/TrashPanel.jsx`
 
 **Checkpoint**: User Stories 1 and 2 both work with clear visual polish and motion feedback.
 
@@ -96,15 +96,15 @@
 
 ### Tests for User Story 3
 
-- [ ] T032 [P] [US3] Add viewport-based responsive interaction tests in `tests/integration/responsive-layout.test.jsx`
-- [ ] T033 [P] [US3] Add large-list (1,000 tasks) performance tests in `tests/integration/large-list-performance.test.jsx` validating that at least 95% of primary interactions (open list, toggle status, apply filter) show visible feedback within 2 seconds
+- [x] T032 [P] [US3] Add viewport-based responsive interaction tests in `tests/integration/responsive-layout.test.jsx`
+- [x] T033 [P] [US3] Add large-list (1,000 tasks) performance tests in `tests/integration/large-list-performance.test.jsx` validating that at least 95% of primary interactions (open list, toggle status, apply filter) show visible feedback within 2 seconds
 
 ### Implementation for User Story 3
 
-- [ ] T034 [P] [US3] Implement responsive layout breakpoints for shell and panels in `src/styles/globals.css`
-- [ ] T035 [P] [US3] Optimize derived task filtering selectors for large collections in `src/state/taskSelectors.js`
-- [ ] T036 [US3] Improve list rendering/update efficiency for large datasets in `src/components/TaskList/TaskList.jsx`
-- [ ] T037 [US3] Validate and adjust shell composition for breakpoint-safe controls in `src/app/AppShell.jsx`
+- [x] T034 [P] [US3] Implement responsive layout breakpoints for shell and panels in `src/styles/globals.css`
+- [x] T035 [P] [US3] Optimize derived task filtering selectors for large collections in `src/state/taskSelectors.js`
+- [x] T036 [US3] Improve list rendering/update efficiency for large datasets in `src/components/TaskList/TaskList.jsx`
+- [x] T037 [US3] Validate and adjust shell composition for breakpoint-safe controls in `src/app/AppShell.jsx`
 
 **Checkpoint**: All user stories are independently testable and usable across screen sizes.
 
@@ -114,14 +114,14 @@
 
 **Purpose**: Final quality, validation, and handoff readiness.
 
-- [ ] T038 [P] Refresh implementation/verification notes in `specs/001-advanced-todo-app/quickstart.md`
-- [ ] T039 Run lint/test verification and capture execution evidence in `specs/001-advanced-todo-app/checklists/execution-ready.md`
-- [ ] T040 [P] Perform cleanup/refactor pass across `src/components/` and `src/state/`
-- [ ] T041 [P] Summarize MVP and incremental delivery outcomes in `specs/001-advanced-todo-app/checklists/requirements.md`
-- [ ] T042 [P] Add branch naming validation script in `.specify/scripts/powershell/validate-feature-branch.ps1`
-- [ ] T043 [P] Add automated branch-policy check workflow in `.github/workflows/branch-policy.yml`
-- [ ] T044 Add branch-policy pass/fail evidence capture gate in `specs/001-advanced-todo-app/checklists/execution-ready.md`
-- [ ] T045 [P] Add local-only persistence contract test (no account/cloud sync dependency) in `tests/contract/local-only-persistence.test.js`
+- [x] T038 [P] Refresh implementation/verification notes in `specs/001-advanced-todo-app/quickstart.md`
+- [x] T039 Run lint/test verification and capture execution evidence in `specs/001-advanced-todo-app/checklists/execution-ready.md`
+- [x] T040 [P] Perform cleanup/refactor pass across `src/components/` and `src/state/`
+- [x] T041 [P] Summarize MVP and incremental delivery outcomes in `specs/001-advanced-todo-app/checklists/requirements.md`
+- [x] T042 [P] Add branch naming validation script in `.specify/scripts/powershell/validate-feature-branch.ps1`
+- [x] T043 [P] Add automated branch-policy check workflow in `.github/workflows/branch-policy.yml`
+- [x] T044 Add branch-policy pass/fail evidence capture gate in `specs/001-advanced-todo-app/checklists/execution-ready.md`
+- [x] T045 [P] Add local-only persistence contract test (no account/cloud sync dependency) in `tests/contract/local-only-persistence.test.js`
 
 ---
 

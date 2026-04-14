@@ -1,0 +1,19 @@
+:root {
+  --bg: #0b1020;
+  --surface: #151b2f;
+  --surface-alt: #1e2742;
+  --text: #f5f7ff;
+  --muted: #b9c1e0;
+  --primary: #6ee7ff;
+  --primary-strong: #22d3ee;
+  --success: #34d399;
+  --danger: #fb7185;
+  --warning: #fbbf24;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+}

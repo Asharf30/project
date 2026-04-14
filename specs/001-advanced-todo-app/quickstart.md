@@ -8,7 +8,7 @@ Implement a modular React todo application with Framer Motion, clean separation 
 
 - Node.js 20+
 - npm 10+
-- Git branch: `002-create-feature-branch`
+- Git branch: `001-advanced-todo-app` (or another branch matching `^\d{3}-[a-z0-9-]+$`)
 
 ## Recommended Implementation Order
 
@@ -49,6 +49,19 @@ Implement a modular React todo application with Framer Motion, clean separation 
    - Unit/integration tests for lifecycle actions and filter behavior.
    - Manual check for 1,000-task usability threshold.
    - Verify trash behavior (manual permanent delete only).
+
+## Verification Commands
+
+Run from repository root:
+
+- `npm install`
+- `npm run lint`
+- `npm test`
+- `pwsh ./.specify/scripts/powershell/validate-feature-branch.ps1`
+
+Record outcomes in:
+
+- `specs/001-advanced-todo-app/checklists/execution-ready.md`
 
 ## Manual Validation Checklist
 

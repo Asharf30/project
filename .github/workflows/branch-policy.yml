@@ -1,0 +1,22 @@
+name: branch-policy
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches:
+      - "**"
+
+jobs:
+  validate-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate branch naming policy
+        shell: pwsh
+        run: |
+          $branch = "${{ github.head_ref }}"
+          if ([string]::IsNullOrWhiteSpace($branch)) {
+            $branch = "${{ github.ref_name }}"
+          }
+          ./.specify/scripts/powershell/validate-feature-branch.ps1 -Branch $branch

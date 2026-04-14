@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    Segoe UI,
+    Arial,
+    sans-serif;
+  background: radial-gradient(circle at top, #1c2952 0%, var(--bg) 45%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app-shell {
+  width: min(1000px, 100%);
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+.panel {
+  background: linear-gradient(
+    180deg,
+    var(--surface) 0%,
+    var(--surface-alt) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-3);
+}
+
+.stack {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.input,
+.button {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: #0e1530;
+  color: var(--text);
+  padding: 0.6rem 0.8rem;
+}
+
+.button {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.button:hover {
+  border-color: var(--primary);
+}
+
+.button.is-active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-strong));
+  color: #03111c;
+  border-color: transparent;
+}
+
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.task-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  background: rgba(11, 16, 32, 0.65);
+}
+
+.task-item.is-completed .title {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.title {
+  word-break: break-word;
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.6rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.status-chip.is-completed {
+  background: rgba(52, 211, 153, 0.2);
+  color: #7cf3bf;
+}
+
+.status-chip.is-incomplete {
+  background: rgba(251, 191, 36, 0.2);
+  color: #ffd76a;
+}
+
+.danger {
+  color: #ffd8df;
+  border-color: rgba(251, 113, 133, 0.65);
+}
+
+.section-title {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .app-shell {
+    padding: var(--space-3);
+  }
+
+  .task-item {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+  }
+
+  .task-item .toolbar {
+    width: 100%;
+  }
+
+  .button,
+  .input {
+    width: 100%;
+  }
+}
