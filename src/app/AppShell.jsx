@@ -4,7 +4,8 @@ import { AddTaskForm } from "../components/AddTaskForm/AddTaskForm.jsx";
 import { TaskList } from "../components/TaskList/TaskList.jsx";
 import { TaskFilters } from "../components/TaskFilters/TaskFilters.jsx";
 import { TrashPanel } from "../components/TrashPanel/TrashPanel.jsx";
-import { layoutMotion } from "../animations/layoutMotion.js";
+import { getLayoutMotion } from "../animations/layoutMotion.js";
+import { useReducedMotionPreference } from "../hooks/useReducedMotionPreference.js";
 import { useTaskStore } from "../state/taskStore.js";
 import {
   getFilteredActiveTasks,
@@ -13,6 +14,8 @@ import {
 } from "../state/taskSelectors.js";
 
 export function AppShell() {
+  const prefersReducedMotion = useReducedMotionPreference();
+
   const tasks = useTaskStore((state) => state.tasks);
   const activeFilter = useTaskStore((state) => state.activeFilter);
   const activePanel = useTaskStore((state) => state.activePanel);
@@ -38,6 +41,10 @@ export function AppShell() {
     [tasks, activeFilter],
   );
   const trashTasks = useMemo(() => getTrashTasks(tasks), [tasks]);
+  const layoutMotion = useMemo(
+    () => getLayoutMotion(prefersReducedMotion),
+    [prefersReducedMotion],
+  );
 
   function withErrorHandling(action) {
     try {
@@ -51,7 +58,11 @@ export function AppShell() {
   }
 
   return (
-    <main className="app-shell stack" data-testid="app-shell">
+    <main
+      className="app-shell stack"
+      data-testid="app-shell"
+      data-reduced-motion={prefersReducedMotion ? "true" : "false"}
+    >
       <header className="panel stack">
         <h1 className="section-title">Advanced Todo Experience</h1>
         <p style={{ margin: 0, color: "var(--muted)" }}>
@@ -63,14 +74,14 @@ export function AppShell() {
       <section className="panel stack" aria-label="Panel controls">
         <div className="toolbar" role="tablist" aria-label="Panels">
           <button
-            className={`button ${activePanel === "tasks" ? "is-active" : ""}`}
+            className={`button button-secondary ${activePanel === "tasks" ? "is-active" : ""}`}
             onClick={() => setActivePanel("tasks")}
             type="button"
           >
             Tasks ({counts.all})
           </button>
           <button
-            className={`button ${activePanel === "trash" ? "is-active" : ""}`}
+            className={`button button-secondary ${activePanel === "trash" ? "is-active" : ""}`}
             onClick={() => setActivePanel("trash")}
             type="button"
           >
@@ -98,6 +109,7 @@ export function AppShell() {
 
             <TaskList
               tasks={visibleTasks}
+              prefersReducedMotion={prefersReducedMotion}
               onDelete={(taskId) =>
                 withErrorHandling(() => moveTaskToTrash(taskId))
               }

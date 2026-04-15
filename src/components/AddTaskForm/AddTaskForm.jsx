@@ -29,7 +29,11 @@ export function AddTaskForm({ onAddTask, disabled = false }) {
           placeholder="What needs to be done?"
           value={title}
         />
-        <button className="button" disabled={disabled} type="submit">
+        <button
+          className="button button-primary"
+          disabled={disabled}
+          type="submit"
+        >
           Add task
         </button>
       </div>

@@ -32,7 +32,7 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }) {
 
       <div className="toolbar">
         <button
-          className="button"
+          className={`button ${task.isCompleted ? "button-secondary" : "button-primary"}`}
           onClick={() => onToggle(task.id)}
           type="button"
         >
@@ -41,11 +41,15 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }) {
 
         {isEditing ? (
           <>
-            <button className="button" onClick={handleSave} type="button">
+            <button
+              className="button button-primary"
+              onClick={handleSave}
+              type="button"
+            >
               Save
             </button>
             <button
-              className="button"
+              className="button button-secondary"
               onClick={() => {
                 setDraftTitle(task.title);
                 setIsEditing(false);
@@ -57,7 +61,7 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }) {
           </>
         ) : (
           <button
-            className="button"
+            className="button button-accent"
             onClick={() => setIsEditing(true)}
             type="button"
           >
@@ -66,7 +70,7 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }) {
         )}
 
         <button
-          className="button danger"
+          className="button button-danger"
           onClick={() => onDelete(task.id)}
           type="button"
         >

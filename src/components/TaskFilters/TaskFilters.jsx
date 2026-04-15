@@ -14,7 +14,7 @@ export function TaskFilters({ activeFilter, counts, onFilterChange }) {
         {FILTERS.map((filter) => (
           <button
             key={filter.id}
-            className={`button ${activeFilter === filter.id ? "is-active" : ""}`}
+            className={`button button-secondary ${activeFilter === filter.id ? "is-active" : ""}`}
             onClick={() => onFilterChange(filter.id)}
             type="button"
           >
