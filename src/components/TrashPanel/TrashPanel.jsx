@@ -20,14 +20,14 @@ export function TrashPanel({ tasks, onRestore, onPermanentDelete }) {
             <span className="title">{task.title}</span>
             <div className="toolbar">
               <button
-                className="button"
+                className="button button-secondary"
                 onClick={() => onRestore(task.id)}
                 type="button"
               >
                 Restore
               </button>
               <button
-                className="button danger"
+                className="button button-danger"
                 onClick={() => onPermanentDelete(task.id)}
                 type="button"
               >

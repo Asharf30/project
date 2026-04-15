@@ -1,10 +1,25 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { TaskItem } from "../TaskItem/TaskItem.jsx";
-import { taskItemMotion } from "../../animations/taskItemMotion.js";
-import { taskListMotion } from "../../animations/taskListMotion.js";
+import { getTaskItemMotion } from "../../animations/taskItemMotion.js";
+import { getTaskListMotion } from "../../animations/taskListMotion.js";
+import {
+  STAGGER_DELAY_DEFAULT,
+  TRANSITION_DURATION_MAX,
+  TRANSITION_DURATION_MIN,
+  TRANSITION_EASING_CSS,
+} from "../../animations/motionConfig.js";
 
-export function TaskList({ tasks, onToggle, onDelete, onEdit }) {
+export function TaskList({
+  tasks,
+  onToggle,
+  onDelete,
+  onEdit,
+  prefersReducedMotion = false,
+}) {
+  const itemMotion = getTaskItemMotion(prefersReducedMotion);
+  const listMotion = getTaskListMotion(prefersReducedMotion);
+
   if (tasks.length === 0) {
     return (
       <p style={{ margin: 0, color: "var(--muted)" }}>
@@ -16,10 +31,18 @@ export function TaskList({ tasks, onToggle, onDelete, onEdit }) {
   return (
     <motion.ul
       className="task-list"
-      data-motion="enabled"
+      data-motion={prefersReducedMotion ? "reduced" : "enabled"}
+      data-motion-reduced={prefersReducedMotion ? "true" : "false"}
+      data-stagger-delay={STAGGER_DELAY_DEFAULT}
+      data-duration-min={TRANSITION_DURATION_MIN}
+      data-duration-max={TRANSITION_DURATION_MAX}
+      data-easing={TRANSITION_EASING_CSS}
       initial="initial"
       animate="animate"
-      variants={taskListMotion}
+      variants={listMotion}
+      style={{
+        willChange: prefersReducedMotion ? "auto" : "opacity, transform",
+      }}
       aria-label="Task list"
     >
       <AnimatePresence>
@@ -27,11 +50,11 @@ export function TaskList({ tasks, onToggle, onDelete, onEdit }) {
           <motion.li
             key={task.id}
             layout
-            variants={taskItemMotion}
-            initial={taskItemMotion.initial}
-            animate={taskItemMotion.animate}
-            exit={taskItemMotion.exit}
-            transition={taskItemMotion.transition}
+            variants={itemMotion}
+            initial={itemMotion.initial}
+            animate={itemMotion.animate}
+            exit={itemMotion.exit}
+            transition={itemMotion.transition}
           >
             <TaskItem
               task={task}
